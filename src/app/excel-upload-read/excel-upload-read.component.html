@@ -1,0 +1,20 @@
+<input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
+<button type="button" class="btn btn-info" (click)="Upload()" >Upload</button>
+
+
+<p> Excel Data : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button (click)="hideKendoGrid()">Hide/Show Div</button></p>
+
+<div [hidden]="!gridVisible">
+    <app-kendo-grid [data]="gridData"></app-kendo-grid>
+</div>
+
+<div>
+    <app-kendo-pie-chart></app-kendo-pie-chart>
+    <div class="example-wrapper">
+        <p>Select:</p>
+        <kendo-dropdownlist 
+            [data]="listItems"
+            (valueChange)="valueChange($event)">
+        </kendo-dropdownlist>
+    </div>
+</div>
